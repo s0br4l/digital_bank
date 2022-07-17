@@ -8,7 +8,7 @@
 
   {%for acc in acclist %}
     <li>
-    {{ acc.cpf }}
+    |<a href="{% url 'accid' acc.id %}">{{ acc.cpf }}</a>|
     </li>
   {% endfor %}
 

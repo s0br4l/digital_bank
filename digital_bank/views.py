@@ -23,7 +23,11 @@ def newacc(request):
 
 def acclist(request):
     acclist = Contas.objects.all()
-    return render(request, 'acclist.html', {'acclist':acclist})
+    return render(request, 'acclist.html', {'acclist': acclist})
+
+def accid(request, acc_id):
+    accid = Contas.objects.get(pk=acc_id)
+    return render(request, 'acc.html', {'accid': accid})
 
 def accbalance(request):
     return render(request, 'accbalance.html', {})

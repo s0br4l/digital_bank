@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if accid %}
+</br></br>
+    <li>
+        Nome: {{ accid.nome }}</br>
+    </li>
+    <li>
+        CPF: {{ accid.cpf }}</br>
+    </li>
+    <li>
+        RG: {{ accid.rg }}</br>
+    </li>
+    <li>
+        Celular: {{ accid.celular }}</br>
+    </li>
+    <li>
+        Endereco: {{ accid.endereco }}</br>
+    </li>
+    <li>
+        CEP: {{ accid.cep }}</br>
+    </li>
+    <li>
+        Email: {{ accid.email }}</br>
+    </li>
+    <li>
+        Saldo atual: {{ accid.saldo }}</br>
+    </li>
+
+{% endif %}
+
+{% endblock %}
