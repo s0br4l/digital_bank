@@ -8,6 +8,7 @@ urlpatterns = [
     path('acclist', views.acclist, name='acclist'),
     path('acc/<acc_id>', views.accid, name='accid'),
     path('accbalance', views.accbalance, name='accbalance'),
+    path('accbalance_results', views.accbalance_results, name='accbalance_results'),
     path('transactions', views.transactions, name='transactions'),
     path('acchistory', views.acchistory, name='acchistory'),
 ]

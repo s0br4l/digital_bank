@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from .forms import NewAccForm
 from django.http import HttpResponseRedirect
@@ -31,6 +32,19 @@ def accid(request, acc_id):
 
 def accbalance(request):
     return render(request, 'accbalance.html', {})
+
+def accbalance_results(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        try:
+            acc_searched = Contas.objects.get(cpf=searched)
+            return render(request, 'accbalance_results.html',
+                          {'searched': searched, 'acc_searched': acc_searched})
+        except ObjectDoesNotExist:
+            return render(request, 'accbalance_results.html', {})
+
+    else:
+        return render(request, 'accbalance_results.html', {})
 
 def transactions(request):
     return render(request, 'transactions.html', {})

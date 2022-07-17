@@ -5,4 +5,13 @@
 {% block content %}
 <h1>Seleciona a conta, e aperta botao pra aparecer o saldo
 </h1>
+
+  <form class="d-flex" role="search" method="POST" action="{% url 'accbalance_results' %}">
+
+    {% csrf_token %}
+
+    <input class="form-control me-2" type="search" placeholder="Insira o CPF da conta que voce quer consultar saldo"
+           aria-label="Search" name="searched">
+    <button class="btn btn-outline-success" type="submit">Consultar saldo</button>
+  </form>
 {% endblock %}
