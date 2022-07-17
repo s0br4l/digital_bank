@@ -5,4 +5,11 @@
 {% block content %}
 <h1>Listar todas as contas, linkadas para sua pagina
 </h1>
+
+  {%for acc in acclist %}
+    <li>
+    {{ acc.cpf }}
+    </li>
+  {% endfor %}
+
 {% endblock %}
