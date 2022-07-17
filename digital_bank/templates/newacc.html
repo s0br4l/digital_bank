@@ -5,4 +5,22 @@
 {% block content %}
 <h1>Criar nova conta aqui - forms etc
 </h1>
+<br/><br/>
+{% if submitted %}
+    Conta cadastrada com sucesso!
+
+{% else %}
+
+<form class="mb-3 row" action="" method="POST">
+    {% csrf_token %}
+<div class="col-sm-7">
+    {{ form.as_p }}
+
+    <input type="submit" value="Cadastrar conta" class="btn btn-outline-dark">
+</div>
+
+
+</form>
+
+{% endif %}
 {% endblock %}
