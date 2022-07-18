@@ -22,12 +22,12 @@ class Contas(models.Model):
         return str(self.cpf)
 
 
-class Historico(models.Model):
+class Transferencias(models.Model):
     ENVIADO = "-"
     RECEBIDO = "+"
     TIPOS_TRANSF = [(ENVIADO, 'Enviar'), (RECEBIDO, 'Receber')]
 
-    id = models.OneToOneField(Contas, on_delete=models.CASCADE, primary_key=True)
+    id_transf = models.ForeignKey(Contas, blank=True, null=True, on_delete=models.CASCADE)
     data_transf = models.DateTimeField()
     valor_transf = models.DecimalField(max_digits=15, decimal_places=2)
     tipo_transf = models.CharField(max_length=1, choices=TIPOS_TRANSF)

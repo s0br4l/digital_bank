@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Contas, Historico
+from .models import Contas
 
 
 class NewAccForm(ModelForm):

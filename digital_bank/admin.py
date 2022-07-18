@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contas, Historico
+from .models import Contas
 
 admin.site.register(Contas)
-admin.site.register(Historico)
+

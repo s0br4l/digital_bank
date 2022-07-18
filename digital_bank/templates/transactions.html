@@ -5,4 +5,20 @@
 {% block content %}
 <h1>Seleciona a conta que vai transferir e a que vai receber
 </h1>
+
+  <form class="d-flex" role="search" method="POST" action="{% url 'transactions_results' %}">
+
+    {% csrf_token %}
+
+     <input class="form-control me-2" type="search" placeholder="Insira o CPF da conta que vai enviar o dinheiro"
+           aria-label="Search" name="envia">
+     <input class="form-control me-2" type="search" placeholder="Insira o CPF da conta que vai receber o dinheiro"
+         aria-label="Search" name="recebe">
+     <input class="form-control me-2" type="search" placeholder="Insira o valor da transferencia"
+         aria-label="Search" name="valor">
+     <input class="form-control me-2" type="search" placeholder="Insira a data da transferencia"
+     aria-label="Search" name="data">
+    <button class="btn btn-outline-success" type="submit">Transferir</button>
+  </form>
+
 {% endblock %}

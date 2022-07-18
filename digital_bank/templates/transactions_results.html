@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+    {% if cpfenvia and cpfrecebe and valor_envia and valor_recebe %}
+
+        <h2> Transferencia realizada com sucesso </h2><br/>
+        <br/>
+    {% elif valor_transf %}
+        <h2> Coloque cpfs validos para transferir </h2>
+
+   {% else %}
+        <h2> Coloque valores validos para transferir </h2>
+
+    {% endif %}
+
+{% endblock %}
